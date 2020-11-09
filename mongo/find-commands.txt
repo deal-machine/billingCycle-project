@@ -1,0 +1,9 @@
+use db_finance
+db.billingcycles.find()
+db.billingcycles.find()pretty()
+db.billingcycles.findOne()
+db.billingcycles.findOne({month: 1})
+db.billingcycles.find({$or: [{month:1},{month:3}]})
+db.billingcycles.find({credits:{$exists: true}}).pretty()
+db.billingcycles.find({year:2017}).skip(1)
+db.billingcycles.find({year:2017}).skip(1).limit(1)

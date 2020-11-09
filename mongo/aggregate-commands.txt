@@ -1,0 +1,16 @@
+
+db.billingcycles.aggregate([
+  {
+      $project:{
+        credit:{$sum:"$credts.value"},
+        debt:{$sum:"$debts.value"}
+      },
+  },
+  {
+      $group:{
+        _id:null,
+        credit:{$sum:"$credit"},
+        debt:{$sum:"$debt"}
+      }
+  }
+])

@@ -1,0 +1,8 @@
+show dbs
+use db_finance
+show collections
+db.createCollection('incomes')
+show collections
+show dbs
+db.createCollection('outcomes')
+db.incomes.drop()

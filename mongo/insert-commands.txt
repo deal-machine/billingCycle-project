@@ -1,0 +1,26 @@
+use db_finance
+db.billingcycles.insert({ name: "Janeiro/17", month: 1, year: 2017})
+db.billingcycles.save({ name: "Fevereiro/17", month: 2, year: 2017})
+db.billingcycles.insert(
+  {
+    name: "Março/17",
+    month: 3,
+    year: 2017,
+    credts: [
+      {
+        name: "Salario",
+        value: 1000
+      }
+    ],
+    debts: [
+      {
+        name: "Miolo de chave da moto",
+        value: 150
+      },
+      {
+        name: "telefone",
+        value: 50
+      }
+    ]
+  }
+)
