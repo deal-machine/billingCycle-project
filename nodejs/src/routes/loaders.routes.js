@@ -1,9 +1,9 @@
 const { Router } = require('express')
+const billingCycleService = require('../api/billingCycleService')
 
-const loadersRouter = Router();
+module.exports = function () {
+  const loadersRouter = Router();
 
-loadersRouter.use((request, response) => {
-  response.json({ message: "ok" })
-})
+  billingCycleService.register(loadersRouter, '/billingCycles')
+}
 
-module.exports = loadersRouter

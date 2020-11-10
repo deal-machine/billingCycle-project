@@ -3,6 +3,6 @@ const loadersRouter = require('./loaders.routes')
 
 const routes = Router()
 
-routes.use('/', loadersRouter)
+routes.use('/api', loadersRouter)
 
 module.exports = routes

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const connection = mongoose.connect('mongodb://localhost/db_finance',
+mongoose.connect('mongodb://localhost:27017/db_finance',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
-
-module.exports = connection
+mongoose.Promise = global.Promise
+module.exports = mongoose
