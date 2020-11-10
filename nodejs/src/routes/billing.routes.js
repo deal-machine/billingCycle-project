@@ -2,10 +2,10 @@ const { Router } = require('express')
 const billingCycleService = require('../api/services/billingCycleService')
 const { getSummary } = require('../api/services/billingSummaryService')
 
-const loadersRouter = Router();
+const billingRouter = Router();
 
-billingCycleService.register(loadersRouter, '/billingCycles')
+billingCycleService.register(billingRouter, '/billingCycles')
 
-loadersRouter.get('/billingSummary', getSummary)
+billingRouter.get('/billingSummary', getSummary)
 
-module.exports = loadersRouter
+module.exports = billingRouter
