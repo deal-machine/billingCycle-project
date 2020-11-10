@@ -1,4 +1,4 @@
-const BillingCycle = require('./models/billingCycle')
+const BillingCycle = require('../models/billingCycle')
 
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
 BillingCycle.updateOptions({ new: true, runValidators: true })
