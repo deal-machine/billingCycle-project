@@ -1,9 +1,9 @@
 const { Router } = require('express')
 const billingCycleService = require('../api/billingCycleService')
 
-module.exports = function () {
-  const loadersRouter = Router();
+const loadersRouter = Router();
 
-  billingCycleService.register(loadersRouter, '/billingCycles')
-}
+billingCycleService.register(loadersRouter, '/billingCycles')
 
+
+module.exports = loadersRouter
