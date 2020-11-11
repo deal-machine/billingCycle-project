@@ -1,3 +1,4 @@
 node_modules
 nodejs/node_modules
+angularjs/node_modules
 *.log
