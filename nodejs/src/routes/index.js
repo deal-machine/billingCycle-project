@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const loadersRouter = require('./loaders.routes')
+const billingRouter = require('./billing.routes')
 
 const routes = Router()
 
-routes.use('/api', loadersRouter)
+routes.use('/api', billingRouter)
 
 module.exports = routes
