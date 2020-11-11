@@ -18,7 +18,7 @@ gulp.task('deps.js', () => {
   ])
     .pipe(uglify())
     .pipe(concat('deps.min.js'))
-    .pipe(gulp.dest('public/assets/js'))
+    .pipe(gulp.dest('public/assets/js/'))
 })
 gulp.task('deps.css', () => {
   return gulp.src([
@@ -30,11 +30,12 @@ gulp.task('deps.css', () => {
   ])
     .pipe(uglifycss({ "uglyComments": true }))
     .pipe(concat('deps.min.css'))
-    .pipe(gulp.dest('public/assets/css'))
+    .pipe(gulp.dest('public/assets/css/'))
 })
 gulp.task('deps.fonts', () => {
   return gulp.src([
     'node_modules/font-awesome/fonts/*.*',
     'node_modules/admin-lte/bootstrap/fonts/*.*'
-  ]).pipe(gulp.dest('public/assets/fonts'))
+  ])
+    .pipe(gulp.dest('public/assets/fonts/'))
 })
