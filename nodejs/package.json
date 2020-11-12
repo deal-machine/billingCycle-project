@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "production": "pm2 start loader.js --name nodejs"
+    "production": "pm2 start ./src/server.js --name nodejs",
+    "pm2": "node_modules/.bin/pm2"
   },
   "keywords": [],
   "author": "",
