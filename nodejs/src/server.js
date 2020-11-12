@@ -1,10 +1,13 @@
 const express = require('express')
 const routes = require('./routes')
 const { urlencoded } = require('body-parser')
+const cors = require('cors')
 
 require('./config/database')
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 app.use(urlencoded({ extended: true }))
