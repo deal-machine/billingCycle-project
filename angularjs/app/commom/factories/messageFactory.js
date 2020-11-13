@@ -1,5 +1,5 @@
 (function () {
-  angular.module('meanApp').factory('errors', [
+  angular.module('meanApp').factory('msgs', [
     'toastr',
     ErrorFactory
   ])
