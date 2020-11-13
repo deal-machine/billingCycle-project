@@ -10,24 +10,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="credit in billing.billingCycle.credits">
+      <tr ng-repeat="(name, value) in billing.billingCycle.credits">
         <td>
-          <input ng-model="credit.name" class="form-control" placeholder="Informe o nome"
-            ng-readonly="billing.tabDelete">
+          <input ng-model="name" class="form-control" placeholder="Informe o nome" ng-readonly="billing.tabDelete">
         </td>
         <td>
-          <input ng-model="credit.value" class="form-control" placeholder="Informe o valor"
-            ng-readonly="billing.tabDelete" type="number">
+          <input ng-model="value" class="form-control" placeholder="Informe o valor" ng-readonly="billing.tabDelete"
+            type="number">
         </td>
-        <td class="table-actions">
-          <button class="btn btn-success" ng-class="{disabled: billing.tabDelete}">
-            <i class="fa fa-plus"></i>
+
+        <td>
+          <button class="btn btn-success" ng-click="billing.addCredit($index)" ng-class="{disabled: billing.tabDelete}">
           </button>
-          <button class="btn btn-warning" ng-class="{disabled: billing.tabDelete}">
-            <i class="fa fa-clone"></i>
+
+          <button class="btn btn-warning" ng-click="billing.cloneCredit($index, credit)"
+            ng-class="{disabled: billing.tabDelete}">
           </button>
-          <button class="btn btn-danger" ng-class="{disabled: billing.tabDelete}">
-            <i class="fa fa-danger"></i>
+
+          <button class="btn btn-danger" ng-click="billing.deleteCredit($index)"
+            ng-class="{disabled: billing.tabDelete}">
           </button>
         </td>
       </tr>

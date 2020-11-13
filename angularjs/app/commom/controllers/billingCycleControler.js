@@ -12,7 +12,7 @@
 
     vm.refresh = () => {
       $http.get(url).then((response) => {
-        vm.billingCycle = { credits: [{}], debts: [{}] }
+        vm.billingCycle = {}
         vm.billingCycle = response.data
 
         tabs.show(vm, { tabList: true, tabCreate: true })
@@ -21,7 +21,7 @@
 
     vm.create = () => {
 
-      $http.post(url, vm.billingCycle).then(response => {
+      $http.post(url, vm.billingCycle).then((response) => {
         vm.refresh()
 
         msgs.addSuccess("Operacao realizada")
@@ -48,6 +48,29 @@
       }).catch((response) => {
         msgs.addError(response.data.errors)
       })
+    }
+
+    vm.addCredit = (index) => {
+      vm.billingCycle.credits.splice(index + 1, 0, {})
+    }
+    vm.cloneCredit = (index, { name, value }) => {
+      vm.billingCycle.credits.splice(index + 1, 0, { name, value })
+    }
+    vm.deleteCredit = (index) => {
+      if (vm.billingCycle.credits.length > 1) {
+        vm.billingCycle.credits.splice(index, 1)
+      }
+    }
+    vm.addDebt = (index) => {
+      vm.billingCycle.debts.splice(index + 1, 0, {})
+    }
+    vm.cloneDebt = (index, { name, value, status }) => {
+      vm.billingCycle.debts.splice(index + 1, 0, { name, value, status })
+    }
+    vm.deleteDebt = (index) => {
+      if (vm.billingCycle.debts.length > 1) {
+        vm.billingCycle.debs.splice(index, 1)
+      }
     }
 
     vm.showTabUpdate = (billingCycle) => {
