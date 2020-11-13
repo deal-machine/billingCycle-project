@@ -12,13 +12,12 @@
 
     vm.refresh = () => {
       $http.get(url).then((response) => {
-        vm.billingCycle = {}
+        vm.billingCycle = { credits: [{}], debts: [{}] }
         vm.billingCycle = response.data
 
         tabs.show(vm, { tabList: true, tabCreate: true })
       })
     }
-
 
     vm.create = () => {
 

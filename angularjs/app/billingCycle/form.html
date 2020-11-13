@@ -6,6 +6,19 @@
       model="billing.billingCycle.month" readonly="billing.tabDelete"></field>
     <field id="year" label="Ano" grid="12 6 4" placeholder="Informe o ano" type="number"
       model="billing.billingCycle.year" readonly="billing.tabDelete"></field>
+
+    <div class="col-xs-12 col-sm-6">
+      <fieldset>
+        <legend>Credits</legend>
+        <div ng-include="'billingCycle/creditList.html'"></div>
+      </fieldset>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <fieldset>
+        <legend>Debts</legend>
+        <div ng-include="'billingCycle/debtList.html'"></div>
+      </fieldset>
+    </div>
   </div>
 
   <div class="box-footer">
@@ -14,7 +27,6 @@
     <button class="btn btn-warning" ng-if="billing.tabUpdate" ng-click="billing.update()">Update</button>
 
     <button class="btn btn-danger" ng-if="billing.tabDelete" ng-click="billing.delete()">Delete</button>
-
 
     <button class="btn btn-default" ng-click="billing.refresh()">Cancel</button>
   </div>
