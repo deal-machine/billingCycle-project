@@ -3,25 +3,25 @@
 <section class="content">
   <div class="nav-tabs-custom" ng-controller="BillingCycleCtrl as billing">
     <ul class="nav nav-tabs">
-      <li ng-if="billing.tabList">
+      <li ng-if="billing.tabList" ng-class="{active: billing.tabList}">
         <a href data-target="#tabList" data-toggle="tab">
           <i class="fa fa-bars"></i> Lista
         </a>
       </li>
 
       <li ng-if="billing.tabCreate">
-        <a href data-target="#tabCreate" data-toggle="tab">
+        <a href data-target=" #tabCreate" data-toggle="tab">
           <i class="fa fa-plus"></i> Create
         </a>
       </li>
 
-      <li ng-if="billing.tabUpdate">
+      <li ng-if="billing.tabUpdate" ng-class="{active: billing.tabUpdate}">
         <a href data-target="#tabUpdate" data-toggle="tab">
           <i class="fa fa-pencil-alt"></i> Update
         </a>
       </li>
 
-      <li ng-if="billing.tabDelete">
+      <li ng-if="billing.tabDelete" ng-class="{active: billing.tabDelete}">
         <a href data-target="#tabDelete" data-toggle="tab">
           <i class="fa fa-trash"></i> Delete
         </a>
@@ -29,10 +29,13 @@
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane" id="tabList" ng-include="'billingCycle/list.html'" ng-if="billing.tabList"></div>
+      <div class="tab-pane" id="tabList" ng-class="{active: billing.tabList}" ng-include="'billingCycle/list.html'"
+        ng-if="billing.tabList"></div>
       <div class="tab-pane" id="tabCreate" ng-include="'billingCycle/form.html'" ng-if="billing.tabCreate"></div>
-      <div class="tab-pane" id="tabUpdate" ng-include="'billingCycle/form.html'" ng-if="billing.tabUpdate"></div>
-      <div class="tab-pane" id="tabDelete" ng-include="'billingCycle/form.html'" ng-if="billing.tabDelete"></div>
+      <div class="tab-pane" id="tabUpdate" ng-include="'billingCycle/form.html'" ng-if="billing.tabUpdate"
+        ng-class="{active: billing.tabUpdate}"></div>
+      <div class="tab-pane" id="tabDelete" ng-include="'billingCycle/form.html'" ng-if="billing.tabDelete"
+        ng-class="{active: billing.tabDelete}"></div>
     </div>
 
   </div>
